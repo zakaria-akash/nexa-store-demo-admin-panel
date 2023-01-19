@@ -6,8 +6,17 @@ body {
   text-align: center;
 }
 
+.all-products {
+  margin: 5vh 5vw;
+  padding: 0 5vw;
+  text-decoration: none;
+  color: white;
+  font-size: medium;
+  vertical-align: middle;
+}
+
 h1 {
   font-family: "Bigelow Rules", cursive;
-  font-size: 72px;
+  font-size: 60px;
   color: #0ccac4;
 }

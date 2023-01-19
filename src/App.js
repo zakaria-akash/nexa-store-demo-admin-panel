@@ -1,44 +1,23 @@
-import { useEffect, useState } from "react";
-import { CardList } from "./component/card-list/card-list.component";
-import { SearchBox } from "./component/search-box/search-box.component";
+import { Button } from "antd";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import NewProductForm from "./component/new-product-form/new-product-form.component";
+import ShowAllProducts from "./component/show-all-products/show-all-products.component";
 
 const App = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  const [searchField, setSearchField] = useState("");
-  // const fetchItems = async () => {
-  //   const data = await fetch("https://fakestoreapi.com/products");
-  //   const items = await data.json();
-  //   setAllProducts(items);
-  // };
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((items) => setAllProducts(items));
-  }, []);
-  const handleChange = (e) => {
-    setSearchField(e.target.value);
-    e.preventDefault();
-  };
-
-  const filteredProducts = allProducts.filter((product) => {
-    return (
-      product.title.toLowerCase().includes(searchField.toLowerCase()) ||
-      product.category.toLowerCase().includes(searchField.toLowerCase())
-    );
-  });
-
   return (
     <div className="App">
       <h1>Nexa Store Admin Panel</h1>
-      <SearchBox
-        placeholder="search product by name or category"
-        handleChange={handleChange}
-      />
-
-      <CardList products={filteredProducts} />
-      <button>Add New Product</button>
+      <Link className="all-products" to="/show-all-products">
+        <Button>Show All Products</Button>
+      </Link>
+      <Link className="all-products" to="/new-product-insert">
+        <Button>Add New Product</Button>
+      </Link>
+      <Routes>
+        <Route path="show-all-products" element={<ShowAllProducts />} />
+        <Route path="new-product-insert" element={<NewProductForm />} />
+      </Routes>
     </div>
   );
 };
