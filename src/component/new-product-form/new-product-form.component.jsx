@@ -1,4 +1,5 @@
 import { Button, Modal, Form, Input } from "antd";
+import { FormOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
 import "./new-product-form.styles.css";
@@ -44,7 +45,7 @@ const NewProductForm = () => {
   return (
     <div className="new-product">
       <Button className="new-product-button" onClick={showModal}>
-        New Product Form
+        <FormOutlined /> New Product Form
       </Button>
       <Modal open={modalStatus} onOk={form.submit} onCancel={handleCancel}>
         <Form

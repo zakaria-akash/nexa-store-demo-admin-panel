@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import Footer from "./component/footer/footer.component";
 import NewProductForm from "./component/new-product-form/new-product-form.component";
 import ShowAllProducts from "./component/show-all-products/show-all-products.component";
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="show-all-products" element={<ShowAllProducts />} />
         <Route path="new-product-insert" element={<NewProductForm />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
