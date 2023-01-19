@@ -139,10 +139,10 @@ const NewProductForm = () => {
               autoSize={{ minRows: 4, maxRows: 6 }}
             />
           </Form.Item>
-          {/* <Form.Item // Form Item (Submit Button)
+          <Form.Item // Form Item (Submit Button)
           >
             <Button type="primary">Submit</Button>
-          </Form.Item> */}
+          </Form.Item>
         </Form>
       </Modal>
     </div>
